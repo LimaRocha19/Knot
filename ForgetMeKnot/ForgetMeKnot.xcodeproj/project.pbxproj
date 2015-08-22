@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4BFD3831B8914B200512492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3821B8914B200512492 /* AppDelegate.swift */; };
+		E4BFD3851B8914B200512492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3841B8914B200512492 /* ViewController.swift */; };
+		E4BFD3881B8914B200512492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BFD3861B8914B200512492 /* Main.storyboard */; };
+		E4BFD38A1B8914B200512492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BFD3891B8914B200512492 /* Assets.xcassets */; };
+		E4BFD38D1B8914B200512492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */; };
+		E4BFD3981B8914B200512492 /* ForgetMeKnotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3971B8914B200512492 /* ForgetMeKnotTests.swift */; };
+		E4BFD3A31B8914B200512492 /* ForgetMeKnotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3A21B8914B200512492 /* ForgetMeKnotUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4BFD3941B8914B200512492 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4BFD3771B8914B200512492 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4BFD37E1B8914B200512492;
+			remoteInfo = ForgetMeKnot;
+		};
+		E4BFD39F1B8914B200512492 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4BFD3771B8914B200512492 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4BFD37E1B8914B200512492;
+			remoteInfo = ForgetMeKnot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4BFD37F1B8914B200512492 /* ForgetMeKnot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForgetMeKnot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BFD3821B8914B200512492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4BFD3841B8914B200512492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E4BFD3871B8914B200512492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4BFD3891B8914B200512492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4BFD38C1B8914B200512492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4BFD38E1B8914B200512492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BFD3931B8914B200512492 /* ForgetMeKnotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgetMeKnotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BFD3971B8914B200512492 /* ForgetMeKnotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetMeKnotTests.swift; sourceTree = "<group>"; };
+		E4BFD3991B8914B200512492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BFD39E1B8914B200512492 /* ForgetMeKnotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgetMeKnotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4BFD3A21B8914B200512492 /* ForgetMeKnotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetMeKnotUITests.swift; sourceTree = "<group>"; };
+		E4BFD3A41B8914B200512492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4BFD37C1B8914B200512492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD3901B8914B200512492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD39B1B8914B200512492 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4BFD3761B8914B200512492 = {
+			isa = PBXGroup;
+			children = (
+				E4BFD3811B8914B200512492 /* ForgetMeKnot */,
+				E4BFD3961B8914B200512492 /* ForgetMeKnotTests */,
+				E4BFD3A11B8914B200512492 /* ForgetMeKnotUITests */,
+				E4BFD3801B8914B200512492 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4BFD3801B8914B200512492 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFD37F1B8914B200512492 /* ForgetMeKnot.app */,
+				E4BFD3931B8914B200512492 /* ForgetMeKnotTests.xctest */,
+				E4BFD39E1B8914B200512492 /* ForgetMeKnotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4BFD3811B8914B200512492 /* ForgetMeKnot */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFD3821B8914B200512492 /* AppDelegate.swift */,
+				E4BFD3841B8914B200512492 /* ViewController.swift */,
+				E4BFD3861B8914B200512492 /* Main.storyboard */,
+				E4BFD3891B8914B200512492 /* Assets.xcassets */,
+				E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */,
+				E4BFD38E1B8914B200512492 /* Info.plist */,
+			);
+			path = ForgetMeKnot;
+			sourceTree = "<group>";
+		};
+		E4BFD3961B8914B200512492 /* ForgetMeKnotTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFD3971B8914B200512492 /* ForgetMeKnotTests.swift */,
+				E4BFD3991B8914B200512492 /* Info.plist */,
+			);
+			path = ForgetMeKnotTests;
+			sourceTree = "<group>";
+		};
+		E4BFD3A11B8914B200512492 /* ForgetMeKnotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFD3A21B8914B200512492 /* ForgetMeKnotUITests.swift */,
+				E4BFD3A41B8914B200512492 /* Info.plist */,
+			);
+			path = ForgetMeKnotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4BFD37E1B8914B200512492 /* ForgetMeKnot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4BFD3A71B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnot" */;
+			buildPhases = (
+				E4BFD37B1B8914B200512492 /* Sources */,
+				E4BFD37C1B8914B200512492 /* Frameworks */,
+				E4BFD37D1B8914B200512492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForgetMeKnot;
+			productName = ForgetMeKnot;
+			productReference = E4BFD37F1B8914B200512492 /* ForgetMeKnot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4BFD3921B8914B200512492 /* ForgetMeKnotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4BFD3AA1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotTests" */;
+			buildPhases = (
+				E4BFD38F1B8914B200512492 /* Sources */,
+				E4BFD3901B8914B200512492 /* Frameworks */,
+				E4BFD3911B8914B200512492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4BFD3951B8914B200512492 /* PBXTargetDependency */,
+			);
+			name = ForgetMeKnotTests;
+			productName = ForgetMeKnotTests;
+			productReference = E4BFD3931B8914B200512492 /* ForgetMeKnotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4BFD39D1B8914B200512492 /* ForgetMeKnotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4BFD3AD1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotUITests" */;
+			buildPhases = (
+				E4BFD39A1B8914B200512492 /* Sources */,
+				E4BFD39B1B8914B200512492 /* Frameworks */,
+				E4BFD39C1B8914B200512492 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4BFD3A01B8914B200512492 /* PBXTargetDependency */,
+			);
+			name = ForgetMeKnotUITests;
+			productName = ForgetMeKnotUITests;
+			productReference = E4BFD39E1B8914B200512492 /* ForgetMeKnotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4BFD3771B8914B200512492 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Knot;
+				TargetAttributes = {
+					E4BFD37E1B8914B200512492 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					E4BFD3921B8914B200512492 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = E4BFD37E1B8914B200512492;
+					};
+					E4BFD39D1B8914B200512492 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = E4BFD37E1B8914B200512492;
+					};
+				};
+			};
+			buildConfigurationList = E4BFD37A1B8914B200512492 /* Build configuration list for PBXProject "ForgetMeKnot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4BFD3761B8914B200512492;
+			productRefGroup = E4BFD3801B8914B200512492 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4BFD37E1B8914B200512492 /* ForgetMeKnot */,
+				E4BFD3921B8914B200512492 /* ForgetMeKnotTests */,
+				E4BFD39D1B8914B200512492 /* ForgetMeKnotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4BFD37D1B8914B200512492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BFD38D1B8914B200512492 /* LaunchScreen.storyboard in Resources */,
+				E4BFD38A1B8914B200512492 /* Assets.xcassets in Resources */,
+				E4BFD3881B8914B200512492 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD3911B8914B200512492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD39C1B8914B200512492 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4BFD37B1B8914B200512492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BFD3851B8914B200512492 /* ViewController.swift in Sources */,
+				E4BFD3831B8914B200512492 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD38F1B8914B200512492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BFD3981B8914B200512492 /* ForgetMeKnotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4BFD39A1B8914B200512492 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BFD3A31B8914B200512492 /* ForgetMeKnotUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4BFD3951B8914B200512492 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4BFD37E1B8914B200512492 /* ForgetMeKnot */;
+			targetProxy = E4BFD3941B8914B200512492 /* PBXContainerItemProxy */;
+		};
+		E4BFD3A01B8914B200512492 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4BFD37E1B8914B200512492 /* ForgetMeKnot */;
+			targetProxy = E4BFD39F1B8914B200512492 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4BFD3861B8914B200512492 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BFD3871B8914B200512492 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4BFD38C1B8914B200512492 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4BFD3A51B8914B200512492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4BFD3A61B8914B200512492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4BFD3A81B8914B200512492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ForgetMeKnot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4BFD3A91B8914B200512492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ForgetMeKnot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4BFD3AB1B8914B200512492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ForgetMeKnotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForgetMeKnot.app/ForgetMeKnot";
+			};
+			name = Debug;
+		};
+		E4BFD3AC1B8914B200512492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ForgetMeKnotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForgetMeKnot.app/ForgetMeKnot";
+			};
+			name = Release;
+		};
+		E4BFD3AE1B8914B200512492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ForgetMeKnotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ForgetMeKnot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E4BFD3AF1B8914B200512492 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ForgetMeKnotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = knot.ForgetMeKnotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ForgetMeKnot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4BFD37A1B8914B200512492 /* Build configuration list for PBXProject "ForgetMeKnot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BFD3A51B8914B200512492 /* Debug */,
+				E4BFD3A61B8914B200512492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4BFD3A71B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BFD3A81B8914B200512492 /* Debug */,
+				E4BFD3A91B8914B200512492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4BFD3AA1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BFD3AB1B8914B200512492 /* Debug */,
+				E4BFD3AC1B8914B200512492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4BFD3AD1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4BFD3AE1B8914B200512492 /* Debug */,
+				E4BFD3AF1B8914B200512492 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4BFD3771B8914B200512492 /* Project object */;
+}
