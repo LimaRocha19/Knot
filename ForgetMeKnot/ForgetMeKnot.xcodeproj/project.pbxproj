@@ -14,6 +14,7 @@
 		E4BFD38D1B8914B200512492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */; };
 		E4BFD3981B8914B200512492 /* ForgetMeKnotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3971B8914B200512492 /* ForgetMeKnotTests.swift */; };
 		E4BFD3A31B8914B200512492 /* ForgetMeKnotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3A21B8914B200512492 /* ForgetMeKnotUITests.swift */; };
+		E4BFD3B11B8916DD00512492 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BFD3B01B8916DD00512492 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E4BFD39E1B8914B200512492 /* ForgetMeKnotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForgetMeKnotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BFD3A21B8914B200512492 /* ForgetMeKnotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetMeKnotUITests.swift; sourceTree = "<group>"; };
 		E4BFD3A41B8914B200512492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4BFD3B01B8916DD00512492 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BFD3B11B8916DD00512492 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		E4BFD3761B8914B200512492 = {
 			isa = PBXGroup;
 			children = (
+				E4BFD3B01B8916DD00512492 /* CoreLocation.framework */,
 				E4BFD3811B8914B200512492 /* ForgetMeKnot */,
 				E4BFD3961B8914B200512492 /* ForgetMeKnotTests */,
 				E4BFD3A11B8914B200512492 /* ForgetMeKnotUITests */,
@@ -192,6 +196,11 @@
 				TargetAttributes = {
 					E4BFD37E1B8914B200512492 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					E4BFD3921B8914B200512492 = {
 						CreatedOnToolsVersion = 7.0;
