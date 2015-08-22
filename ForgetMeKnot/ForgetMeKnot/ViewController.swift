@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    // MARK: - Outlets
+    
+    // MARK: - Outlets & Privates
     @IBOutlet weak var tableView: UITableView!
+    var beacons = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return beacons.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        
+        let beacon = self.beacons[indexPath.row] as! CLBeacon
+        var lbl = ""
+        switch (beacon.proximity) {
+        case .Far:
+            lbl = "Far";
+            break;
+        case .Near:
+            lbl = "Near";
+            break;
+        case .Immediate:
+            lbl = "Immediate";
+            break;
+        case .Unknown:
+            lbl = "Unknown";
+            break;
+        }
+        
+        cell.textLabel?.text = lbl
+        cell.detailTextLabel?.text = "Major: \(beacon.major.intValue), Minor: \(beacon.minor.intValue), RSSI: \(beacon.rssi), UUID: \(beacon.proximityUUID.UUIDString)"
+        
         return cell
     }
 
