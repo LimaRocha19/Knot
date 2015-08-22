@@ -7,16 +7,64 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    var locationManager: CLLocationManager!
+    var lastProximity: CLProximity!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let beaconUUID = NSUUID(UUIDString: "EBEFD083-70A2-47C8-9837-E7B5634DF524")
+        let beaconIdentifier = "iBeaconModules.us"
+        let beaconRegion = CLBeaconRegion(proximityUUID: beaconUUID!, identifier: beaconIdentifier)
+        
+        locationManager = CLLocationManager()
+        if locationManager.respondsToSelector(NSSelectorFromString("requestWhenInUseAuthorization")) {
+            locationManager.requestAlwaysAuthorization()
+        }
+        locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = false
+        
+        locationManager.startMonitoringForRegion(beaconRegion)
+        locationManager.startRangingBeaconsInRegion(beaconRegion)
+        locationManager.startUpdatingLocation()
+        
         return true
+    }
+    
+    func sendLocalNotificationWithMessage(message: String) {
+        let notification = UILocalNotification()
+        notification.alertBody = message
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        var message = ""
+        
+        if beacons.count > 0 {
+            let nearestBeacon = beacons.first as CLBeacon!
+            if nearestBeacon.proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown {
+                return
+            }
+            switch (nearestBeacon.proximity) {
+            case .Far:
+                message = "Você está esquecendo de algo longe "
+                break
+            case .Near:
+                message = "Você está esquecendo de algo perto"
+                break
+            default:
+                break
+            }
+        } else {
+            message = "Seus objetos estão com você"
+        }
+        
+        self.sendLocalNotificationWithMessage(message)
     }
 
     func applicationWillResignActive(application: UIApplication) {
