@@ -46,8 +46,8 @@ class ViewController: UIViewController{
         animate = UIView()
         animate.frame = CGRectMake(view.frame.size.width/2 - 10, view.frame.size.height - 200, 20, 20)
         animate.layer.cornerRadius = 10
-        animate.backgroundColor = UIColor.blueColor()
-        animate.alpha = 0.1
+        animate.backgroundColor = UIColor.whiteColor()
+        animate.alpha = 0.4
         view.addSubview(animate)
         
         imageView = UIImageView()
@@ -63,7 +63,7 @@ class ViewController: UIViewController{
             self.animate.alpha = 0
             }) { (bool: Bool) -> Void in
                 self.animate.transform = CGAffineTransformMakeScale(1, 1)
-                self.animate.alpha = 0.1
+                self.animate.alpha = 0.4
         }
     }
     
