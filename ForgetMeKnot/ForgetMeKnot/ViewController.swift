@@ -21,7 +21,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var lblMSG: UILabel!
     
     var animate: UIView!
-    var imageView: UIImageView!
+    var imageView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +46,21 @@ class ViewController: UIViewController{
         animate = UIView()
         animate.frame = CGRectMake(view.frame.size.width/2 - 10, view.frame.size.height - 200, 20, 20)
         animate.layer.cornerRadius = 10
-        animate.backgroundColor = UIColor.whiteColor()
+        animate.layer.borderColor = UIColor(red: 240/255, green: 94/255, blue: 63/255, alpha: 1.0).CGColor
+        animate.layer.borderWidth = 2
+        animate.backgroundColor = UIColor(red: 240/255, green: 94/255, blue: 63/255, alpha: 1.0)
         animate.alpha = 0.4
         view.addSubview(animate)
         
-        imageView = UIImageView()
-        imageView.frame = CGRectMake(view.frame.size.width/2 - 100, view.frame.size.height - 300, 200, 200)
-        imageView.image = UIImage(named: "Knott.app")
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView = UIView()
+        imageView.frame = CGRectMake(view.frame.size.width/2 - 20, view.frame.size.height - 210, 40, 40)
+        imageView.layer.cornerRadius = 20
+        imageView.backgroundColor = UIColor(red: 240/255, green: 94/255, blue: 63/255, alpha: 1.0)
         view.addSubview(imageView)
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(1.2, delay: 0.0, options: .Repeat, animations: {
+        UIView.animateWithDuration(1.5, delay: 0.0, options: .Repeat, animations: {
             self.animate.transform = CGAffineTransformMakeScale(100, 100)
             self.animate.alpha = 0
             }) { (bool: Bool) -> Void in
