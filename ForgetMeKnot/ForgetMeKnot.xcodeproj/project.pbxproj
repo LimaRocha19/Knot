@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D530D25A1B896F8200BFEDA4 /* iBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D530D2591B896F8200BFEDA4 /* iBeaconManager.swift */; };
 		E4BFD3831B8914B200512492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3821B8914B200512492 /* AppDelegate.swift */; };
 		E4BFD3851B8914B200512492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFD3841B8914B200512492 /* ViewController.swift */; };
 		E4BFD3881B8914B200512492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BFD3861B8914B200512492 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D530D2591B896F8200BFEDA4 /* iBeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iBeaconManager.swift; sourceTree = "<group>"; };
 		E4BFD37F1B8914B200512492 /* ForgetMeKnot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForgetMeKnot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BFD3821B8914B200512492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4BFD3841B8914B200512492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				E4BFD3821B8914B200512492 /* AppDelegate.swift */,
 				E4BFD3841B8914B200512492 /* ViewController.swift */,
+				D530D2591B896F8200BFEDA4 /* iBeaconManager.swift */,
 				E4BFD3861B8914B200512492 /* Main.storyboard */,
 				E4BFD3891B8914B200512492 /* Assets.xcassets */,
 				E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 			files = (
 				E4BFD3851B8914B200512492 /* ViewController.swift in Sources */,
 				E4BFD3831B8914B200512492 /* AppDelegate.swift in Sources */,
+				D530D25A1B896F8200BFEDA4 /* iBeaconManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +496,7 @@
 				E4BFD3A91B8914B200512492 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BFD3AA1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +505,7 @@
 				E4BFD3AC1B8914B200512492 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BFD3AD1B8914B200512492 /* Build configuration list for PBXNativeTarget "ForgetMeKnotUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +514,7 @@
 				E4BFD3AF1B8914B200512492 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
