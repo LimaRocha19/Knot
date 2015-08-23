@@ -16,7 +16,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     var locationManager: CLLocationManager!
     var lastProximity: CLProximity!
     var beaconRegion: CLBeaconRegion!
-    var beaconsArray: [CLBeacon]!
+    var beaconsArray: [CLBeacon] = []
     
     func config() {
         let beaconUUID = NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")
@@ -37,9 +37,8 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         
-        beaconsArray = beacons
-        
         if beacons.count > 0 {
+            beaconsArray = beacons
             print("Beacon \(beacons.first?.proximityUUID.UUIDString)")
             let nearestBeacon = beacons.first as CLBeacon!
             if nearestBeacon.proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown {
@@ -48,6 +47,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
             switch (nearestBeacon.proximity) {
             case .Far:
                 print("Você está esquecendo de algo longe ")
+                sendLocalNotificationWithMessage("Você está esquecendo de algo longe ")
                 break
             case .Near:
                 print("Você está esquecendo de algo perto")
@@ -61,9 +61,6 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     func getBeaconsArray() -> Array<CLBeacon>{
         locationManager.startUpdatingLocation()
         locationManager.stopUpdatingLocation()
-        if beaconsArray.count == 0{
-            return Array<CLBeacon>()
-        }
         return beaconsArray
     }
     

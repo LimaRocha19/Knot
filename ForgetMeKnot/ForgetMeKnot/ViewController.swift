@@ -19,7 +19,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
     
-//        beacons = userDef.valueForKey("arrayBeacons") as! NSArray
+        beacons = iBeaconManager.sharedInstance.beaconsArray
+        //        beacons = userDef.valueForKey("arrayBeacons") as! NSArray
         // Do any additional setup after loading the view, typically from a nib.
     }
 
