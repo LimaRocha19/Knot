@@ -13,10 +13,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - Outlets & Privates
     @IBOutlet weak var tableView: UITableView!
+    var userDef = NSUserDefaults.standardUserDefaults()
     var beacons = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        beacons = iBeaconManager.sharedInstance.beaconsArray
+        //        beacons = userDef.valueForKey("arrayBeacons") as! NSArray
         // Do any additional setup after loading the view, typically from a nib.
     }
 
