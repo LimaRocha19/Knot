@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import QuartzCore
 
 class ViewController: UIViewController{
     
@@ -18,6 +19,9 @@ class ViewController: UIViewController{
     @IBOutlet weak var lblID: UILabel!
     @IBOutlet weak var lblUUID: UILabel!
     @IBOutlet weak var lblMSG: UILabel!
+    
+    var layer: CALayer!
+    var animate: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +39,22 @@ class ViewController: UIViewController{
             }
         }
         
-        
-        //        beacons = userDef.valueForKey("arrayBeacons") as! NSArray
-        // Do any additional setup after loading the view, typically from a nib.
+        animate = UIView()
+        animate.frame = CGRectMake(view.frame.size.width/2 - 10, view.frame.size.height - 50, 20, 20)
+        animate.layer.cornerRadius = 10
+        animate.backgroundColor = UIColor.blueColor()
+        animate.alpha = 0.1
+        view.addSubview(animate)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(1.2, delay: 0.0, options: .Repeat, animations: {
+            self.animate.transform = CGAffineTransformMakeScale(100, 100)
+            self.animate.alpha = 0
+            }) { (bool: Bool) -> Void in
+                self.animate.transform = CGAffineTransformMakeScale(1, 1)
+                self.animate.alpha = 0.1
+        }
     }
 
     override func didReceiveMemoryWarning() {
