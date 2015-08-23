@@ -48,8 +48,9 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
             }
             switch (nearestBeacon.proximity) {
             case .Far:
-                print("Você está esquecendo de algo longe ")
                 sendLocalNotificationWithMessage("Você está esquecendo sua carteira")
+                locationManager.stopUpdatingLocation()
+                print("Você está esquecendo de algo longe ")
                 break
             case .Near:
                 print("Você está esquecendo de algo perto")
@@ -67,6 +68,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     }
     
     func sendLocalNotificationWithMessage(message: String) {
+        UIApplication.sharedApplication().scheduledLocalNotifications = []
         let notification = UILocalNotification()
         notification.fireDate = NSDate()
         notification.timeZone = NSTimeZone(forSecondsFromGMT: 10800)
