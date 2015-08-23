@@ -57,7 +57,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
             default:
                 break
             }
-        } 
+        }
     }
     
     func getBeaconsArray() -> Array<CLBeacon>{

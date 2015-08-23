@@ -20,8 +20,8 @@ class ViewController: UIViewController{
     @IBOutlet weak var lblUUID: UILabel!
     @IBOutlet weak var lblMSG: UILabel!
     
-    var layer: CALayer!
     var animate: UIView!
+    var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +36,25 @@ class ViewController: UIViewController{
                 self.lblID.text = String(beac.rssi)
                 self.lblUUID.text = beac.proximityUUID.UUIDString
                 self.lblMSG.text = "Carteira"
+            } else {
+                self.lblID.text = "Procurando..."
+                self.lblUUID.text = ""
+                self.lblMSG.text = "Onde está?"
             }
         }
         
         animate = UIView()
-        animate.frame = CGRectMake(view.frame.size.width/2 - 10, view.frame.size.height - 50, 20, 20)
+        animate.frame = CGRectMake(view.frame.size.width/2 - 10, view.frame.size.height - 200, 20, 20)
         animate.layer.cornerRadius = 10
         animate.backgroundColor = UIColor.blueColor()
         animate.alpha = 0.1
         view.addSubview(animate)
+        
+        imageView = UIImageView()
+        imageView.frame = CGRectMake(view.frame.size.width/2 - 100, view.frame.size.height - 300, 200, 200)
+        imageView.image = UIImage(named: "Knott.app")
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        view.addSubview(imageView)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -56,7 +66,7 @@ class ViewController: UIViewController{
                 self.animate.alpha = 0.1
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
