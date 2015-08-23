@@ -49,7 +49,6 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
             switch (nearestBeacon.proximity) {
             case .Far:
                 sendLocalNotificationWithMessage("Você está esquecendo sua carteira")
-                locationManager.stopUpdatingLocation()
                 print("Você está esquecendo de algo longe ")
                 break
             case .Near:
