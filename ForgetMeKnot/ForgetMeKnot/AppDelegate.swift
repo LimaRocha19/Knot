@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let beaconUUID = NSUUID(UUIDString: "EBEFD083-70A2-47C8-9837-E7B5634DF524")
-        let beaconIdentifier = "iBeaconModules.us"
+        let beaconUUID = NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")
+        let beaconIdentifier = "Knot"
         let beaconRegion = CLBeaconRegion(proximityUUID: beaconUUID!, identifier: beaconIdentifier)
         
         locationManager = CLLocationManager()
@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 break
             case .Near:
                 message = "Você está esquecendo de algo perto"
+                print(nearestBeacon.proximityUUID)
                 break
             default:
                 break
