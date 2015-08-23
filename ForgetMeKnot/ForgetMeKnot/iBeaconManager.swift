@@ -21,6 +21,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     func config() {
         let beaconUUID = NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")
         let beaconIdentifier = "Knot"
+    
         beaconRegion = CLBeaconRegion(proximityUUID: beaconUUID!, identifier: beaconIdentifier)
         
         locationManager = CLLocationManager()
@@ -39,6 +40,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
         
         if beacons.count > 0 {
             beaconsArray = beacons
+            NSNotificationCenter.defaultCenter().postNotificationName("beaconChanged", object: nil);
             print("Beacon \(beacons.first?.proximityUUID.UUIDString)")
             let nearestBeacon = beacons.first as CLBeacon!
             if nearestBeacon.proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown {
