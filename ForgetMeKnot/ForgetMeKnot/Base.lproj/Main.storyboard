@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uiM-lf-RtY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -76,14 +76,14 @@
         <!--Knotts-->
         <scene sceneID="LY8-xB-C4S">
             <objects>
-                <tableViewController id="gFb-Vz-tEx" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ieN-kg-84g">
+                <tableViewController id="gFb-Vz-tEx" customClass="KnottsTVC" customModule="ForgetMeKnot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ieN-kg-84g">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="knottCell" id="3PZ-52-QAg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="knottCell" id="3PZ-52-QAg" customClass="KnottTVCell" customModule="ForgetMeKnot" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3PZ-52-QAg" id="Fsd-Cc-d6c">
@@ -100,11 +100,17 @@
                                             <state key="normal" title="★">
                                                 <color key="titleColor" red="0.81960784310000001" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="setFav:" destination="3PZ-52-QAg" eventType="touchUpInside" id="yAQ-oS-qHi"/>
+                                            </connections>
                                         </button>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kml-Ae-rog">
                                             <rect key="frame" x="308" y="7" width="51" height="31"/>
                                             <animations/>
                                             <color key="onTintColor" red="0.81960784310000001" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="turnOn:" destination="gFb-Vz-tEx" eventType="valueChanged" id="qXZ-1W-AuH"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-de-G7o">
                                             <rect key="frame" x="62" y="12" width="236" height="21"/>
@@ -135,6 +141,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="favBtn" destination="Sx1-Z6-KdC" id="asn-mY-WRg"/>
+                                    <outlet property="name" destination="1Kl-de-G7o" id="phx-O1-O6Z"/>
+                                    <outlet property="on" destination="kml-Ae-rog" id="bY2-uf-OuT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -143,13 +154,115 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Knotts" id="XSr-4d-aT6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="JhP-CX-H8w"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F8c-UO-gp3"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="JhP-CX-H8w">
+                            <connections>
+                                <action selector="editingMode:" destination="gFb-Vz-tEx" id="yyQ-f2-8gj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F8c-UO-gp3">
+                            <connections>
+                                <segue destination="SzM-75-gB5" kind="show" id="iP0-bF-Irz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npd-Wd-5Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="205.5" y="1610.5"/>
+        </scene>
+        <!--Novo Knott-->
+        <scene sceneID="2J6-ft-m8E">
+            <objects>
+                <tableViewController title="Novo Knott" id="SzM-75-gB5" customClass="NewKnottTVC" customModule="ForgetMeKnot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Zw1-W4-Qzt">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="q7G-qB-GY2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tHd-p4-bTE">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tHd-p4-bTE" id="5Po-4H-91X">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qzl-hQ-fDy">
+                                                    <rect key="frame" x="18" y="8" width="339" height="28"/>
+                                                    <animations/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="SzM-75-gB5" id="xiL-Lp-OPs"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qzl-hQ-fDy" secondAttribute="bottom" id="Cyf-32-oK6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Qzl-hQ-fDy" secondAttribute="trailing" constant="10" id="UQw-KH-b7E"/>
+                                                <constraint firstItem="Qzl-hQ-fDy" firstAttribute="top" secondItem="5Po-4H-91X" secondAttribute="topMargin" id="elC-b2-AyR"/>
+                                                <constraint firstItem="Qzl-hQ-fDy" firstAttribute="leading" secondItem="5Po-4H-91X" secondAttribute="leadingMargin" constant="10" id="qVo-NU-sU1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y6a-kF-6wq">
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y6a-kF-6wq" id="dt2-hA-yJS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UUID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drF-xB-IsJ">
+                                                    <rect key="frame" x="18" y="8" width="339" height="28"/>
+                                                    <animations/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="SzM-75-gB5" id="bJB-Ix-XxN"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="drF-xB-IsJ" firstAttribute="top" secondItem="dt2-hA-yJS" secondAttribute="topMargin" id="Py3-ov-knt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="drF-xB-IsJ" secondAttribute="trailing" constant="10" id="Zxz-yX-a0l"/>
+                                                <constraint firstItem="drF-xB-IsJ" firstAttribute="leading" secondItem="dt2-hA-yJS" secondAttribute="leadingMargin" constant="10" id="iGp-3s-S04"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="drF-xB-IsJ" secondAttribute="bottom" id="ogY-JA-FLc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SzM-75-gB5" id="NZf-8D-nXC"/>
+                            <outlet property="delegate" destination="SzM-75-gB5" id="rJh-Sz-Suf"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Novo Knott" id="U5B-Hw-q1p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hUS-8A-2Gb">
+                            <connections>
+                                <action selector="saveBtn:" destination="SzM-75-gB5" id="De7-1X-ghR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="txtName" destination="Qzl-hQ-fDy" id="fNS-rR-wWB"/>
+                        <outlet property="txtUUID" destination="drF-xB-IsJ" id="rnv-k7-85X"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bL-h6-g5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.5" y="2432.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Rrm-NY-cgN">
@@ -177,13 +290,13 @@
             <objects>
                 <tableViewController id="OzO-9K-nMe" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="G87-g8-EG1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="pFG-cz-P0n">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pFG-cz-P0n" id="Dq0-tr-RB1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -233,7 +346,7 @@
             <objects>
                 <tableViewController id="2gK-N1-rrO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Pge-2b-Yr1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -241,7 +354,7 @@
                             <tableViewSection id="gca-Mp-sNw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="tBz-iu-Y34" style="IBUITableViewCellStyleDefault" id="HDJ-pS-BSK">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HDJ-pS-BSK" id="coQ-VY-t10">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -261,7 +374,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="BFD-Pc-bqs" style="IBUITableViewCellStyleDefault" id="hlV-lm-hOU">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hlV-lm-hOU" id="gp1-PF-PRP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -281,7 +394,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="oNN-P3-MLQ" style="IBUITableViewCellStyleDefault" id="smf-rd-xB9">
-                                        <rect key="frame" x="0.0" y="187" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="smf-rd-xB9" id="KHt-4s-WsJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -301,7 +414,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="lx9-gc-ezp" style="IBUITableViewCellStyleDefault" id="Emg-Dy-TRY">
-                                        <rect key="frame" x="0.0" y="231" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emg-Dy-TRY" id="cEe-LU-eW1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -334,11 +447,11 @@
             </objects>
             <point key="canvasLocation" x="1399.5" y="1610.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Knotts-->
         <scene sceneID="CSy-6d-80S">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5lr-0F-Dii" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="PeV-pw-lBE"/>
+                    <tabBarItem key="tabBarItem" title="Knotts" image="Knotts" id="PeV-pw-lBE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d25-Gk-HuP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -358,13 +471,13 @@
             </objects>
             <point key="canvasLocation" x="205.5" y="770.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Grupos-->
         <scene sceneID="IV8-va-n6a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wcO-rL-Tps" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="yfl-bd-vqj"/>
+                    <tabBarItem key="tabBarItem" title="Grupos" image="Groups" id="yfl-bd-vqj"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yNx-5d-pLS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="yNx-5d-pLS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -382,13 +495,13 @@
             </objects>
             <point key="canvasLocation" x="793.5" y="770.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Configurações-->
         <scene sceneID="snu-1N-AwU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Agl-bm-t5K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="kp3-sh-Zn6"/>
+                    <tabBarItem key="tabBarItem" title="Configurações" image="Settings" id="kp3-sh-Zn6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJe-5h-VVY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hJe-5h-VVY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -407,5 +520,10 @@
             <point key="canvasLocation" x="1399.5" y="770.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Groups" width="46" height="35"/>
+        <image name="Knotts" width="69" height="40"/>
+        <image name="Settings" width="42" height="40"/>
+    </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

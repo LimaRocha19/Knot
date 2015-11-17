@@ -19,6 +19,24 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     var beaconRegion: CLBeaconRegion!
     var beaconsArray: [CLBeacon] = []
     
+    func startMonitoringKnott(kn: Knott) {
+        let beaconUUID = NSUUID(UUIDString: kn.uuid!)
+        let beaconIdentifier = kn.name!
+        
+        beaconRegion = CLBeaconRegion(proximityUUID: beaconUUID!, identifier: beaconIdentifier)
+        
+        locationManager = CLLocationManager()
+        if locationManager.respondsToSelector(NSSelectorFromString("requestWhenInUseAuthorization")) {
+            locationManager.requestAlwaysAuthorization()
+        }
+        locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = false
+        
+        locationManager.startMonitoringForRegion(beaconRegion)
+        locationManager.startRangingBeaconsInRegion(beaconRegion)
+        locationManager.startUpdatingLocation()
+    }
+    
     func config() {
         let beaconUUID = NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")
         let beaconIdentifier = "Knot"
@@ -41,16 +59,16 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
         
         if beacons.count > 0 {
             beaconsArray = beacons
-            print(beaconsArray.last?.proximityUUID)
+            print(beaconsArray)
             NSNotificationCenter.defaultCenter().postNotificationName("beaconChanged", object: nil);
             print("Beacon \(beacons.first?.proximityUUID.UUIDString)")
             let nearestBeacon = beacons.first as CLBeacon!
-            if nearestBeacon.proximity == lastProximity || nearestBeacon.proximity == CLProximity.Unknown {
+            if nearestBeacon.proximity == CLProximity.Unknown {
                 return
             }
             switch (nearestBeacon.proximity) {
             case .Far:
-                sendLocalNotificationWithMessage("Você está esquecendo sua carteira")
+                sendLocalNotificationWithMessage("Você está esquecendo \(region.identifier)")
                 print("Você está esquecendo de algo longe ")
                 break
             case .Near:
