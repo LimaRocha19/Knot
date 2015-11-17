@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import CoreBluetooth
 
 class iBeaconManager : NSObject, CLLocationManagerDelegate{
     static let sharedInstance = iBeaconManager()
@@ -40,6 +41,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
         
         if beacons.count > 0 {
             beaconsArray = beacons
+            print(beaconsArray.last?.proximityUUID)
             NSNotificationCenter.defaultCenter().postNotificationName("beaconChanged", object: nil);
             print("Beacon \(beacons.first?.proximityUUID.UUIDString)")
             let nearestBeacon = beacons.first as CLBeacon!
