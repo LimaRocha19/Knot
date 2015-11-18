@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    let iBM = iBeaconManager.sharedInstance
     var userDef = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(userNotSet)
         
         self.window?.tintColor = UIColor(red: 209/255, green: 34/255, blue: 34/255, alpha: 1)
+        
+        iBM.config()
         
         return true
     }

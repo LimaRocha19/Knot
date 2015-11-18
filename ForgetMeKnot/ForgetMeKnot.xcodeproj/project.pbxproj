@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6277CFFA1BFC0C15009DFE0E /* GroupsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277CFF91BFC0C15009DFE0E /* GroupsTVC.swift */; };
+		6277CFFE1BFC0CD0009DFE0E /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277CFFC1BFC0CD0009DFE0E /* Group.swift */; };
+		6277D0001BFC0D0D009DFE0E /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277CFFF1BFC0D0D009DFE0E /* GroupManager.swift */; };
 		62CBB57E1BFBC87300D7AC01 /* KnottsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBB57D1BFBC87300D7AC01 /* KnottsTVC.swift */; };
 		62CBB5801BFBC8A100D7AC01 /* KnottTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBB57F1BFBC8A100D7AC01 /* KnottTVCell.swift */; };
 		62CBB5841BFBCC3B00D7AC01 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBB5821BFBCC3B00D7AC01 /* CoreDataManager.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6277CFF91BFC0C15009DFE0E /* GroupsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTVC.swift; sourceTree = "<group>"; };
+		6277CFFC1BFC0CD0009DFE0E /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = ../Group.swift; sourceTree = "<group>"; };
+		6277CFFF1BFC0D0D009DFE0E /* GroupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupManager.swift; sourceTree = "<group>"; };
 		62CBB57D1BFBC87300D7AC01 /* KnottsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnottsTVC.swift; sourceTree = "<group>"; };
 		62CBB57F1BFBC8A100D7AC01 /* KnottTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnottTVCell.swift; sourceTree = "<group>"; };
 		62CBB5821BFBCC3B00D7AC01 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -100,6 +106,8 @@
 				62CBB5821BFBCC3B00D7AC01 /* CoreDataManager.swift */,
 				62CBB58F1BFBCD0600D7AC01 /* Knott.swift */,
 				62CBB5931BFBCD5300D7AC01 /* KnottManager.swift */,
+				6277CFFF1BFC0D0D009DFE0E /* GroupManager.swift */,
+				6277CFFC1BFC0CD0009DFE0E /* Group.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				E4BFD3821B8914B200512492 /* AppDelegate.swift */,
 				E4BFD3841B8914B200512492 /* ViewController.swift */,
 				D530D2591B896F8200BFEDA4 /* iBeaconManager.swift */,
+				6277CFF91BFC0C15009DFE0E /* GroupsTVC.swift */,
 				62CBB5971BFBD1D100D7AC01 /* Knotts */,
 				E4BFD3861B8914B200512492 /* Main.storyboard */,
 				E4BFD38B1B8914B200512492 /* LaunchScreen.storyboard */,
@@ -306,10 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6277D0001BFC0D0D009DFE0E /* GroupManager.swift in Sources */,
+				6277CFFA1BFC0C15009DFE0E /* GroupsTVC.swift in Sources */,
 				62CBB5941BFBCD5300D7AC01 /* KnottManager.swift in Sources */,
 				62CBB5961BFBD1CA00D7AC01 /* NewKnottTVC.swift in Sources */,
 				E4BFD3851B8914B200512492 /* ViewController.swift in Sources */,
 				62CBB5801BFBC8A100D7AC01 /* KnottTVCell.swift in Sources */,
+				6277CFFE1BFC0CD0009DFE0E /* Group.swift in Sources */,
 				E4BFD3831B8914B200512492 /* AppDelegate.swift in Sources */,
 				62CBB57E1BFBC87300D7AC01 /* KnottsTVC.swift in Sources */,
 				62CBB5911BFBCD0600D7AC01 /* Knott.swift in Sources */,

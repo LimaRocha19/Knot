@@ -18,6 +18,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     var lastProximity: CLProximity!
     var beaconRegion: CLBeaconRegion!
     var beaconsArray: [CLBeacon] = []
+    var x = 0
     
     func startMonitoringKnott(kn: Knott) {
         let beaconUUID = NSUUID(UUIDString: kn.uuid!)
@@ -39,7 +40,7 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
     
     func config() {
         let beaconUUID = NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")
-        let beaconIdentifier = "Knot"
+        let beaconIdentifier = "Knott"
     
         beaconRegion = CLBeaconRegion(proximityUUID: beaconUUID!, identifier: beaconIdentifier)
         
@@ -53,13 +54,19 @@ class iBeaconManager : NSObject, CLLocationManagerDelegate{
         locationManager.startMonitoringForRegion(beaconRegion)
         locationManager.startRangingBeaconsInRegion(beaconRegion)
         locationManager.startUpdatingLocation()
+        if #available(iOS 9.0, *) {
+            locationManager.allowsBackgroundLocationUpdates = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         
+        print("Rodando \(x++)")
         if beacons.count > 0 {
             beaconsArray = beacons
-            print(beaconsArray)
+            print(beaconsArray.count)
             NSNotificationCenter.defaultCenter().postNotificationName("beaconChanged", object: nil);
             print("Beacon \(beacons.first?.proximityUUID.UUIDString)")
             let nearestBeacon = beacons.first as CLBeacon!
